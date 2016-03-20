@@ -1,0 +1,34 @@
+<%= form_for(@competitor, multipart: true, :role => "form") do |f| %>
+  <% if @competitor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@competitor.errors.count, "error") %> prohibited this competitor from being saved:</h2>
+
+      <ul>
+      <% @competitor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-group input-group-lg lead">
+      <%= f.label :名称 %><br>
+      <%= f.text_field :name, :placeholder => "请输入名称"%>
+  </div>
+  <br>
+  <div class="input-group input-group-lg lead">
+    <%= f.label :英文别名 %><br>
+    <%= f.text_field :alias, :placeholder => "请输入英文别名"%>
+  </div>
+  <br>
+  <div class="uploader blue">
+    <input type="text" class="filename" style="height:43px"readonly="readonly"/>
+    <input type="button" name="file" class="button" value="选择图片"/>
+    <%= f.file_field "photo"%>
+  </div>
+
+  <br>
+  <br>
+  <div><%= f.submit "保存", :id => "submit_button", :class=>'btn btn-default btn-lg'%></div>
+
+<% end %>

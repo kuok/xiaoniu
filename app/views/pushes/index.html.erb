@@ -1,0 +1,42 @@
+<div class="center jumbotron" align="center" style="background-color:#82FFFF;margin-top:-3%;">
+<table class="table table-striped table-hover sortable">
+  <!-- <h3>推送列表</h3> -->
+  <thead>
+    <tr>
+      <th>公司</th>
+      <th>时间</th>
+      <th>内容</th>
+      <th>类型</th>
+      <th width="150">操作</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pushes.each do |push| %>
+      <tr>
+        <td><%= competitor_name(push) %>
+        <td><%= push.p_date.to_s %></td>
+        <td><%= push.content %></td>
+        <td><%= type_name(push) %></td>
+        <td>
+          <table>
+            <td width="73">
+              <%= link_to '查看', push%>
+            </td>
+            <td width="73">
+              <%= link_to '编辑', edit_push_path(push)%>
+            </td>
+            <td width="73">
+              <%= link_to '删除', push, method: :delete, data: { confirm: '确定删除该推送?' } %>
+            </td>
+          </table>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+  <%= link_to home_pushes_path, :class => "btn btn-primary btn-lg active" do %>
+    <h4>返回</h4>
+  <% end %>
+</div>

@@ -1,0 +1,45 @@
+<div class="center jumbotron" align="center" style="background-color:#82FFFF;margin-top:-3%;">
+  <h2>公司列表</h2>
+  <br>
+  <table>
+    <% @competitors.each do |competitor| %>
+      <tr>
+        <td width="100">
+          <div class="lead">
+            <h3><%= competitor.name %></h3>
+          </div>
+        </td>
+        <td width="73">
+          <%= link_to competitor, :class => "btn btn-default btn-lg active" do %>
+            <h4>查看</h4>
+          <% end %>
+        </td>
+        <td width="73">
+          <%= link_to edit_competitor_path(competitor), :class => "btn btn-default btn-lg active" do %>
+            <h4>编辑</h4>
+          <% end %>
+        </td>
+        <td width="73">
+          <%= link_to competitor, method: :delete, data: { confirm: '确定删除该公司?' }, :class => "btn btn-default btn-lg active" do %>
+            <h4>删除</h4>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <br>
+  <br>
+  <table>
+    <th width="200">
+      <%= link_to new_competitor_path, :class => "btn btn-primary btn-lg active" do %>
+        <h4>新建</h4>
+      <% end %>
+    </th>
+    <th>
+      <%= link_to data_charge_index_path, :class => "btn btn-primary btn-lg active" do %>
+        <h4>返回</h4>
+      <% end %>
+    </th>
+  </table>
+</div>

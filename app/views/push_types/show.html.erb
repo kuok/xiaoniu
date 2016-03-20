@@ -1,0 +1,24 @@
+<div class="center jumbotron" align="center" style="background-color:#82FFFF;margin-top:-3%;">
+  <div class="lead">
+    <h3>类型名 : <%= @push_type.name %></h3>
+  </div>
+
+<br>
+<table>
+  <th width="200">
+    <%= link_to edit_push_type_path(@push_type), :class => "btn btn-primary btn-lg active" do %>
+      <h4>编辑</h4>
+    <% end %>
+  </th>
+  <th width="200">
+    <%= link_to new_push_type_path, :class => "btn btn-primary btn-lg active" do %>
+      <h4>新建</h4>
+    <% end %>
+  </th >
+  <th>
+    <%= link_to push_types_path, :class => "btn btn-primary btn-lg active" do %>
+      <h4>返回</h4>
+    <% end %>
+  </th>
+</table>
+</div>

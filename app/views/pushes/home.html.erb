@@ -1,0 +1,29 @@
+<p style="margin-top:8%;"></p>
+
+<div class="center jumbotron" align="center" style="background-color:#82FFFF">
+<table>
+  <tr>
+    <td width="320">
+      <%= link_to new_push_path, :class => "btn btn-primary btn-lg active" do %>
+        <h1>新建推送</h1>
+      <% end %>
+    </td>
+    <td width="320">
+      <%= link_to upload_pushes_path, :class => "btn btn-primary btn-lg active" do %>
+        <h1>导入推送</h1>
+      <% end %>
+    </td>
+    <td>
+      <%= link_to pushes_path, :class => "btn btn-primary btn-lg active" do %>
+        <h1>推送列表</h1>
+      <% end %>
+    </td>
+  </tr>
+</table>
+</div>
+
+<div class="center jumbotron" align="center" style="background-color:#82FFFF">
+  <%= link_to data_charge_index_path, :class => "btn btn-primary btn-lg active" do %>
+    <h3>返回</h3>
+  <% end %>
+</div>

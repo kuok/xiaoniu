@@ -1,0 +1,2 @@
+module DataStaticHelper
+end

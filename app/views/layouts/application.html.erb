@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Xiaoniu</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body style="background-color:#82FFFF">
+  <% if show_navi_menu? %>
+    <%= render 'layouts/header' %>
+  <% end %>
+<p>
+    <a id="menu_toggle" href="javascript:void(0)" class='btn btn-link btn-sm' onclick="menuToggle()">...</a>
+</p>
+
+<%= yield %>
+
+</body>
+
+</html>
+

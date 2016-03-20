@@ -1,0 +1,39 @@
+<div class="center jumbotron" align="center" style="background-color:#82FFFF;margin-top:-3%;/*margin-left:10%;*/">
+  <h2>编辑公司</h2>
+  <br>
+  <br>
+  <%= render 'form' %>
+  <br>
+  <br>
+
+  <%= image_tag(@competitor.logo, :class => 'float') %>
+
+  <table>
+    <th width="200">
+      <%= link_to @competitor, :class => "btn btn-primary btn-lg active" do %>
+        <h4>查看</h4>
+      <% end %>
+    </th>
+    <th>
+      <%= link_to competitors_path, :class => "btn btn-primary btn-lg active" do %>
+        <h4>返回</h4>
+      <% end %>
+    </th>
+  </table>
+
+</div>
+
+<script>
+$(function(){
+  $("input[type=file]").change(function(){
+    var path = $(this).val().toString();
+    // alert(path.split(/\\/).pop());
+    path = path.split(/\\/).pop();
+    $(this).parents(".uploader").find(".filename").val(path);
+  });
+  $("input[type=file]").each(function(){
+  if($(this).val()==""){$(this).parents(".uploader").find(".filename").val("未选择图片");}
+  });
+});
+</script>
+

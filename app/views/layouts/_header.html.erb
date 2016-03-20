@@ -1,0 +1,53 @@
+<div id="menu">
+    <ul class="menu">
+        <li>
+            <%= link_to root_path do %>
+                <p>首页</p>
+            <% end %>
+        </li>
+        <li>
+            <%= link_to data_charge_index_path do %>
+                <p>数据管理</p>
+            <% end %>
+            <div><ul>
+                <li>
+                    <%= link_to competitors_path, :class => 'parent' do %>
+                        <span>公司</span>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to home_pushes_path, :class => 'parent' do %>
+                        <span>推送</span>
+                    <% end %>
+                    <div><ul>
+                        <li>
+                            <%= link_to new_push_path, :class => 'parent' do %>
+                                <span>新建推送</span>
+                            <% end %>
+                        </li>
+                        <li>
+                            <%= link_to upload_pushes_path, :class => 'parent' do %>
+                                <span>导入推送</span>
+                            <% end %>
+                        </li>
+                        <li>
+                            <%= link_to pushes_path do %>
+                                <span>推送列表</span>
+                            <% end %>
+                        </li>
+                    </ul></div>
+                </li>
+                <li>
+                    <%= link_to push_types_path do %>
+                        <span>类型</span>
+                    <% end %>
+                </li>
+            </ul></div>
+        </li>
+        <li>
+            <%= link_to data_static_index_path do %>
+                <p>数据统计</p>
+            <% end %>
+        </li>
+    </ul>
+</div>

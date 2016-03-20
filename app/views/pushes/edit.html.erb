@@ -1,0 +1,22 @@
+<div class="center jumbotron" align="center" style="background-color:#82FFFF;margin-top:-3%;">
+  <h2>编辑消息</h2>
+  <br>
+  <br>
+  <%= render 'form' %>
+  <br>
+  <br>
+
+  <table>
+    <th width="200">
+      <%= link_to @push, :class => "btn btn-primary btn-lg active" do %>
+        <h4>查看</h4>
+      <% end %>
+    </th>
+    <th>
+      <%= link_to pushes_path, :class => "btn btn-primary btn-lg active" do %>
+        <h4>返回</h4>
+      <% end %>
+    </th>
+  </table>
+
+</div>

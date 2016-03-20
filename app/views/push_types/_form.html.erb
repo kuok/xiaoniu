@@ -1,0 +1,20 @@
+<%= form_for(@push_type, :role => "form") do |f| %>
+  <% if @push_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@push_type.errors.count, "error") %> prohibited this push_type from being saved:</h2>
+
+      <ul>
+      <% @push_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-group input-group-lg lead">
+      <%= f.label :名称 %><br>
+      <%= f.text_field :name, :placeholder => "请输入名称"%>
+  </div>
+  <br>
+  <div><%= f.submit "保存", :id => "submit_button", :class=>'btn btn-default btn-lg'%></div> 
+<% end %>

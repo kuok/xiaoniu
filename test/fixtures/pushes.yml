@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  p_date: 2016-02-01 17:53:35
+  content: MyString
+  competitor_id: 1
+  type_id: 1
+
+two:
+  p_date: 2016-02-01 17:53:35
+  content: MyString
+  competitor_id: 1
+  type_id: 1
