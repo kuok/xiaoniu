@@ -29,7 +29,7 @@ gem 'bootstrap-sass'
 #chart
 gem 'lazy_high_charts'
 #passenger
-gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
+# gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 #rubocop
 gem 'rubocop'
 

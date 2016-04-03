@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'push_copies_charts/index'
+
+  get 'push_deeps_charts/index'
+
+  get 'push_types_charts/index'
+
+  get 'daily_pushtime_distributions_charts/index'
+
+  get 'daily_pushes_charts/index'
+
+  get 'daily_pushes_chart/index'
+
+  get 'charts_navi/index'
+
+  get 'figures_navi/index'
+
   root 'application#welcome'
 
   get 'skips/index'

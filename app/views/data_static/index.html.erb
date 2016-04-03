@@ -1,1 +1,17 @@
-<%= high_chart("some_id", @chart) %>
+<div class="center jumbotron" align="center" style="background-color:#82FFFF;margin-top:-3%;">
+  <h2>目录</h2>
+  <br>
+  <table>
+    <% charts.each_with_index do |chart, index| %>
+    <tr>
+      <td width="105"><div class="circle"><%= index + 1%></div></td>
+      <td>
+        <%= link_to paths_of_charts[chart] do %>
+          <h3><%= names_of_charts[chart] %></h3>
+        <% end %>
+      </td>
+    </tr> 
+    <% end %>      
+  </table>
+</div>
+
