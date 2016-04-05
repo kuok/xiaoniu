@@ -1,0 +1,10 @@
+<table class="table table-striped table-hover sortable">
+  <tr>
+    <td width="190"><%=label_tag 'begin_date','开始日期' %>:<br> <%=date_field_tag 'begin_date', '2015-12-08' %></td>
+    <td width="190"><%=label_tag 'end_date','结束日期' %>:<br> <%=date_field_tag 'end_date', '2016-01-20' %></td>
+    <td width="220"><%=label_tag 'tickInterval','x轴间隔' %>:<br> <%=number_field_tag 'tickInterval', 3 %></td>
+    <td width="190"><%=label_tag 'name','公司' %>:<br> <%=select_tag 'name', options_for_select(competitor_names, "全部") %></td>
+    <td ><br><%=submit_tag "查询", 'class'=>'btn btn-default btn-sm' %> </td>
+ </tr>
+</table>
+ 

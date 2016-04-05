@@ -14,39 +14,23 @@ class Push < ActiveRecord::Base
     end
   end
 
-  def self.pushes_percent
-    datas = pushes_sort_by_competitor
-    return if datas.empty?
-    result = {}
-    sql = <<-SQL
-      select type_id, count(*) as push_nums
-      from pushes
-      where competitor_id = ?
-      group by type_id
-    SQL
-    datas.each do |data|
-      type_datas = Push.find_by_sql([sql, data.competitor_id])
-      re = []
-      type_datas.each do |t_data|
-        tmp = Common.int_percents(t_data.push_nums, data.push_nums)
-        # result[t_data.type_id] = [] if result[t_data.type_id].nil?
-        # result[t_data.type_id] << tmp
-        re << tmp
-      end
-      result[data.competitor_id] = re
-    end
-    result
-  end
+  # def self.change_year pushes
+  #   pushes.each do |push|
+  #     date = push.p_date.to_s.sub!(/2015/, "2016")
+  #     push.p_date = date.to_datetime
+  #     push.save!
+  #   end
+  # end
 
-  def self.pushes_sort_by_competitor
-    sql = <<-SQL
-      select competitor_id, count(*) as push_nums
-      from pushes
-      group by competitor_id
-    SQL
-    result = Push.find_by_sql([sql])
-    # .collect{|b| [b.competitor_id, b.push_nums]}
-  end
+  # def self.sql
+  #   sql = <<-SQL
+  #     select * 
+  #     from pushes 
+  #     where p_date >= '2015-01-01 00:00:00' 
+  #     and p_date <= '2015-02-01 00:00:00'
+  #   SQL
+  #   sql
+  # end
   
   private
   def self.deal_datas datas

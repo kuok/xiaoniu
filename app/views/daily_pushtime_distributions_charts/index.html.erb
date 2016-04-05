@@ -1,2 +1,8 @@
-<h1>DailyPushtimeDistributionsCharts#index</h1>
-<p>Find me in app/views/daily_pushtime_distributions_charts/index.html.erb</p>
+<div class="container">
+  <%= form_tag "/daily_pushtime_distributions_charts/index", :method => 'get' do%>
+    <%= render '/common/search_header' %>
+  <% end %>
+</div>
+
+<%= high_chart("some_id",@chart) %>
+
